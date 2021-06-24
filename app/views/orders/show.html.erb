@@ -6,6 +6,7 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+    <div><%= @order.email %></div>
   </div>
 
   <div class="panel panel-default items">
@@ -21,8 +22,6 @@
       <tbody>
       
         <% @order.line_items.each do |item| %>
-        <% puts item.inspect %>
-        <% puts item.product.inspect %>
           <%= render 'item',
           product: item[:product],
           quantity: item[:quantity].to_i,
