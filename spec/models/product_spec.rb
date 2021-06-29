@@ -13,7 +13,6 @@ RSpec.describe Product, type: :model do
 
       expect(newProduct).to be_valid
     end
-  end
 
   it "name validation" do
     @category = Category.new(name: "fruit")
@@ -41,5 +40,7 @@ RSpec.describe Product, type: :model do
     expect(@product.valid?).to eql(false)
     expect(@product.errors.full_messages).to eql(["Category can't be blank"])
   end
+
+end
 
 end
